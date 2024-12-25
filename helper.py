@@ -1,13 +1,7 @@
-import pandas as pd ## lib for tabular data
-import matplotlib.pyplot as plt ### lib for visualization
-import seaborn as sns  ### lib for visualization
 import re   ### for regex expressions
-from nltk.corpus import stopwords ### NLTK for NLP taskss
+from nltk.corpus import stopwords ### NLTK for NLP taskss 
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.tree import DecisionTreeClassifier
 
 def preprocessing_step(text):
   text = text.lower()
