@@ -3,20 +3,47 @@ import sklearn
 import helper
 import pickle
 import nltk
+
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
-model=pickle.load(open("models/model.pkl",'rb'))
-vectorizer=pickle.load(open("models/vectorizer.pkl",'rb'))
 
-st.text("sentiment analysis")
-text = st.text_input("please enter your review")
+# Load the model and vectorizer
+model = pickle.load(open("models/model.pkl", 'rb'))
+vectorizer = pickle.load(open("models/vectorizer.pkl", 'rb'))
 
+# Set app background color using markdown and HTML
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background-color: yellow;
+    }
+    .stButton>button {
+        background-color: black;
+        color: white;
+        font-size: 18px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Title for the app
+st.title("Sentiment Analysis App")
+
+# Input field for the user
+text = st.text_input("Please enter your review:")
+
+# Preprocess the text
 token = helper.preprocessing_step(text)
 vectorized_data = vectorizer.transform([token])
+
+# Make a prediction
 prediction = model.predict(vectorized_data)
 
-state = st.button("predict")
+# Display prediction when button is clicked
+if st.button("Predict"):
+    st.text(f"Sentiment: {prediction[0]}")
 
-if state :
-    st.text(prediction)
+
