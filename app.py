@@ -17,7 +17,7 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background-image: url('bg1.png');  /* Use relative path for local image */
+        background-image: url('bg1.png');  /* المسار النسبي */
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -32,6 +32,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 # Title for the app
 st.title("Sentiment Analysis App")
