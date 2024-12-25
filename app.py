@@ -1,8 +1,8 @@
 import streamlit as st 
 import sklearn
-import helper 
+import helper
 import pickle
-import nltk
+
 
 nltk.download('punkt_tab')
 nltk.download('stopwords')
