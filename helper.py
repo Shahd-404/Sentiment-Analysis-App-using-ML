@@ -1,7 +1,8 @@
-import re   ### for regex expressions
-from nltk.corpus import stopwords ### NLTK for NLP taskss 
+import re # regex
+from nltk.corpus import stopwords # NLTK for NLP tasks
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
+
 
 def preprocessing_step(text):
   text = text.lower()
