@@ -12,28 +12,6 @@ nltk.download('wordnet')
 model = pickle.load(open("models/model.pkl", 'rb'))
 vectorizer = pickle.load(open("models/vectorizer.pkl", 'rb'))
 
-# Set background image using markdown and CSS (local image path)
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background-image: url('bg1.png');  /* المسار النسبي */
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        color: white;
-    }
-    .stButton>button {
-        background-color: black;
-        color: white;
-        font-size: 18px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-
 # Title for the app
 st.title("Sentiment Analysis App")
 
