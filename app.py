@@ -44,6 +44,7 @@ prediction = model.predict(vectorized_data)
 
 # Display prediction when button is clicked
 if st.button("Predict"):
-    st.text(f"Sentiment: {prediction[0]}")
-
-
+    if prediction[0] == 0:
+        st.text("Sentiment: Negative Review")
+    else:
+        st.text("Sentiment: Positive Review")
