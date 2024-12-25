@@ -12,25 +12,22 @@ nltk.download('wordnet')
 model = pickle.load(open("models/model.pkl", 'rb'))
 vectorizer = pickle.load(open("models/vectorizer.pkl", 'rb'))
 
-# URL for the background image hosted on GitHub
-bg_image_url = "https://github.com/your-username/your-repo-name/raw/main/bg1.png"  # Replace with the actual URL
-
-# Set background image using markdown and CSS
+# Set background image using markdown and CSS (local image path)
 st.markdown(
-    f"""
+    """
     <style>
-    .reportview-container {{
-        background-image: url("{bg_image_url}");
+    .reportview-container {
+        background-image: url('bg1.png');  /* Use relative path for local image */
         background-size: cover;
         background-position: center;
         height: 100vh;
         color: white;
-    }}
-    .stButton>button {{
+    }
+    .stButton>button {
         background-color: black;
         color: white;
         font-size: 18px;
-    }}
+    }
     </style>
     """,
     unsafe_allow_html=True,
